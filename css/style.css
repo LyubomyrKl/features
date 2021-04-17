@@ -678,12 +678,6 @@ body.lock {
     height: 100%;
     -webkit-transform: translateZ(-10px);
             transform: translateZ(-10px);
-    opacity: .6;
-  }
-  #last_one .box .card_active {
-    -webkit-transform: translateZ(20px);
-            transform: translateZ(20px);
-    opacity: 1;
   }
   #last_one .slider_btn {
     position: absolute;
