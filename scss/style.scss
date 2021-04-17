@@ -24,11 +24,11 @@ body.lock{
 
 
 .menu{
-    background-color: #000;
+    background-color: #718093;
     position: fixed;
     left: 0;
     top: 0;
-    height: 100%;
+    height: 100vh;
     width: 25%;
     transition: .5s;
     transform:translateX(-100%);
@@ -83,7 +83,7 @@ body.lock{
       
       button {
         position: absolute;
-        top: 10px;
+        top: 15px;
         right: -35px;
         width: 30px;
         height: 30px;
@@ -116,7 +116,7 @@ body.lock{
       }
       
       button:hover .burger {
-        border: 2px solid rgba(0, 0, 0, .6  );
+        border: 2px solid rgba(0, 0, 0, .3);
         height: 9px;
         border-radius: 50%;
         margin-left: -1px;
@@ -147,7 +147,7 @@ body.lock{
         opacity: 0;
         animation: ball 1.5s linear infinite;
         content: '';
-        border: 2px solid rgba(0, 0, 0, .6);
+        border: 2px solid rgba(0, 0, 0, .3);
         display: block;
         position: relative;
         top: 0.25px;
@@ -179,7 +179,7 @@ body.lock{
       }
       
       button:active .burger {
-        border: 1.5px solid rgba(0, 0, 0, .6);
+        border: 1.5px solid rgba(0, 0, 0, .3);
         height: 0px;
         border-radius: 0%;
         margin-left: -1px;
@@ -336,14 +336,16 @@ body.lock{
 }
 
 
-// #section_one{
-  
-
-// }
+.section_one{
+  background-color: #FDA7DF;
+}
 
 
 #section_two{
-
+  background-color: #D980FA;
+  .descr__inner{
+    opacity: 1;
+  }
   .descr__inner_front, .descr__inner_back{
     position: absolute;
     transition: .5s all;
@@ -366,6 +368,39 @@ body.lock{
  }
 }
 
+#section_three{
+  background-color: #9980FA;
+  .box{
+    height: 100%;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height:100%
+  }
+  .card{
+    display: flex; 
+    flex-direction:  column;
+    justify-content: center;
+    text-align: center;
+    width: 750px;
+    height: 450px;
+    margin: 10px;
+    background-color:#fab1a0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3); 
+
+    transition: 1s all linear;
+    P{
+      margin-top: 20px;
+    }  
+
+
+  }
+
+  
+}
 
 
 #last_one{
@@ -377,7 +412,7 @@ body.lock{
     align-items: center;
   }
   z-index: 2;
-  background: #2c3e50;
+  background: #12CBC4;
   perspective: 1000px;
   
   .container{
@@ -431,45 +466,73 @@ body.lock{
     }
   }
 
-  
+  .slider_btn{
+    display: block   ;
+  }
 };
 
 
-#section_three{
-  background-color: #ffeaa7;
-  .box{
-    height: 100%;
-    perspective: 1000px;
-    transform-style: preserve-3d;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height:100%
-  }
-  .card{
-    display: flex; 
-    flex-direction:  column;
-    justify-content: center;
-    text-align: center;
-    width: 450px;
-    height: 450px;
-    margin: 10px;
-    background-color:#fab1a0;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3); 
-
-    transition: 1s all linear;
-    P{
-      margin-top: 20px;
-    }  
-
-
-  }
-
-  
-}
 
 
 @media(max-width: 1024px){
+    .menu{  
+      width: 35%;
+      height: 100%;
+    }
 
-};
+    .content__active{
+      transform: translateX(0);
+    }
+    
+    #last_one{
+      
+      position: relative;
+      display: flex;
+      align-items: center;
+      .box{
+        overflow: scroll;
+        width: 75%;
+        box-shadow: inset 0px  50px 50px rgba(0,0,0,0.5);
+        box-shadow:  0px 0px 50px rgba(0,0,0,0.5);
+
+        height: 675px;   
+        
+       .container{
+         display: flex;
+         max-width: 500px;
+         height: 500px;
+         transform: rotate(0); 
+         
+       }
+
+       .card{
+         width: 100%;
+         height: 100%;
+         transform: translateZ(-10px);
+         opacity: .6;
+       }
+       .card_active{
+        transform: translateZ(20px);
+        opacity: 1;
+       }
+      }
+      .slider_btn{
+        position: absolute;
+        bottom: 10px;
+      }
+      
+    }
+    
+};  
+
+@media( max-width: 768px) {
+  .menu{
+    width: 45%;
+  }
+}
+
+@media( max-width: 768px) {
+  .menu{
+    width: 65%;
+  }
+}

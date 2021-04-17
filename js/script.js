@@ -57,7 +57,7 @@ cardsToMove.forEach(function(element){
 
     element.addEventListener('mousemove', (e)=>{
         element.style.transform = `rotateX(${-(e.offsetY - halfHeight)/ 10 }deg) 
-        rotateY(${(e.offsetX - halfWidth) / 10 }deg)`;
+        rotateY(${(e.offsetX - halfWidth) / 20 }deg)`;
     });
 
     element.addEventListener(`mouseout`,()=>{
@@ -71,9 +71,9 @@ cardsToMove.forEach(function(element){
 // last_one last_one last_one
 // last_one last_one last_one
 
-
 const container = document.querySelector('.container');
 
 container.addEventListener('click', ()=>{
     container.classList.toggle('container_origin');
 });
+
