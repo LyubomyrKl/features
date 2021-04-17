@@ -71,9 +71,11 @@ cardsToMove.forEach(function(element){
 // last_one last_one last_one
 // last_one last_one last_one
 
-const container = document.querySelector('.container');
+const container = document.querySelector('.container'),
+        lastSection = document.querySelector('#last_one'),
+        lastSectionBox = lastSection.querySelector('.box');
 
-container.addEventListener('click', ()=>{
+lastSectionBox.addEventListener('click', ()=>{
     container.classList.toggle('container_origin');
 });
 
