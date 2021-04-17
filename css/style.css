@@ -631,6 +631,12 @@ body.lock {
   display: block;
 }
 
+@media (max-width: 1350px) {
+  #last_one .box {
+    max-width: 1050px;
+  }
+}
+
 @media (max-width: 1024px) {
   .menu {
     width: 35%;
