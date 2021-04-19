@@ -403,11 +403,51 @@ body.lock{
 }
 
 
-#last_one{
- .box{
+.section_four{
+  background-color: rgb(201, 123, 60);
+  .container_bar{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .number{
+        position: absolute;
+        top: 45%;
+        font-size: 96px;
+        z-index: 10;
+    }
+    h2{
+      text-align: center;
+    }
+  }
+
+  .progress-ring{
     
+    width: 360px;
+    height: 360px;
+    
+  }
+
+  .progress-ring__circle{
+    transform-origin: center;
+    transform: rotate(-90deg);
+    transition: stroke-dashoffset 1;
+    position: relative;
+    
+   
+  }
+}
+
+
+
+.potrfolio{
+ .box{
+  position: relative;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
@@ -416,6 +456,7 @@ body.lock{
   perspective: 1000px;
   
   .container{
+    
     transform-style: preserve-3d;
     display: flex;
     flex-wrap: wrap;
@@ -466,20 +507,41 @@ body.lock{
     }
   }
 
-  .slider_btn{
-    display: block   ;
+.portfolio-btn{
+  position: absolute;
+  bottom: 30px;
+  border-radius: 10px;
+  background-color: #298d90;
+  transition: .1s linear;
+  a{
+    display: block;
+    text-decoration: none;  
+    padding: 30px 150px;
+    color: white; 
+    font-size: 25px;
+    
+    
   }
+  &:hover{
+    background-color: #227b7e;
+  }
+}
+
 };
 
 
 
 @media( max-width: 1350px) {
   #last_one{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     .box{
       max-width: 1050px;  
     }
   }
 }
+
 @media(max-width: 1024px){
     .menu{  
       width: 35%;
@@ -496,6 +558,7 @@ body.lock{
       display: flex;
       align-items: center;
       .box{
+        margin-top: 20px;
         overflow: scroll;
         width: 75%;
         box-shadow: inset 0px  50px 50px rgba(0,0,0,0.5);
@@ -529,13 +592,21 @@ body.lock{
 };  
 
 @media( max-width: 768px) {
-  .menu{
-    width: 45%;
-  }
-}
-
-@media( max-width: 768px) {
+  
   .menu{
     width: 65%;
+  }
+  
+  .potrfolio{
+    .portfolio-btn{
+      border-radius: 50%;
+      a{
+  
+        padding: 40px 40px;
+        
+      }
+    }
+    
+    
   }
 }

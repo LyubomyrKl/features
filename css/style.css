@@ -545,18 +545,71 @@ body.lock {
   margin-top: 20px;
 }
 
-#last_one {
+.section_four {
+  background-color: #c97b3c;
+}
+
+.section_four .container_bar {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.section_four .container_bar .number {
+  position: absolute;
+  top: 45%;
+  font-size: 96px;
+  z-index: 10;
+}
+
+.section_four .container_bar h2 {
+  text-align: center;
+}
+
+.section_four .progress-ring {
+  width: 360px;
+  height: 360px;
+}
+
+.section_four .progress-ring__circle {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: stroke-dashoffset 1;
+  transition: stroke-dashoffset 1;
+  position: relative;
+}
+
+.potrfolio {
   z-index: 2;
   background: #12CBC4;
   -webkit-perspective: 1000px;
           perspective: 1000px;
 }
 
-#last_one .box {
+.potrfolio .box {
+  position: relative;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -565,7 +618,7 @@ body.lock {
           align-items: center;
 }
 
-#last_one .container {
+.potrfolio .container {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   display: -webkit-box;
@@ -587,28 +640,28 @@ body.lock {
           transform: rotateX(55deg) rotateY(10deg) rotatez(-40deg);
 }
 
-#last_one .container ::-webkit-scrollbar {
+.potrfolio .container ::-webkit-scrollbar {
   width: 5px;
 }
 
-#last_one .container ::-webkit-scrollbar-track {
+.potrfolio .container ::-webkit-scrollbar-track {
   background: #d4d4d4;
   -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset;
           box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset;
 }
 
-#last_one .container ::-webkit-scrollbar-thumb {
+.potrfolio .container ::-webkit-scrollbar-thumb {
   background: #939393;
   border-radius: 8px;
   border: 1px solid #d4d4d4;
 }
 
-#last_one .container_origin {
+.potrfolio .container_origin {
   -webkit-transform: rotate(0);
           transform: rotate(0);
 }
 
-#last_one .card {
+.potrfolio .card {
   width: 250px;
   height: 325px;
   margin: 10px;
@@ -617,21 +670,50 @@ body.lock {
   overflow-y: scroll;
 }
 
-#last_one .card img {
+.potrfolio .card img {
   width: 100%;
 }
 
-#last_one .card:hover {
+.potrfolio .card:hover {
   cursor: pointer;
   -webkit-transform: translateZ(10px);
           transform: translateZ(10px);
 }
 
-#last_one .slider_btn {
+.potrfolio .portfolio-btn {
+  position: absolute;
+  bottom: 30px;
+  border-radius: 10px;
+  background-color: #298d90;
+  -webkit-transition: .1s linear;
+  transition: .1s linear;
+}
+
+.potrfolio .portfolio-btn a {
   display: block;
+  text-decoration: none;
+  padding: 30px 150px;
+  color: white;
+  font-size: 25px;
+}
+
+.potrfolio .portfolio-btn:hover {
+  background-color: #227b7e;
 }
 
 @media (max-width: 1350px) {
+  #last_one {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
   #last_one .box {
     max-width: 1050px;
   }
@@ -656,6 +738,7 @@ body.lock {
             align-items: center;
   }
   #last_one .box {
+    margin-top: 20px;
     overflow: scroll;
     width: 75%;
     -webkit-box-shadow: inset 0px 50px 50px rgba(0, 0, 0, 0.5);
@@ -687,12 +770,12 @@ body.lock {
 
 @media (max-width: 768px) {
   .menu {
-    width: 45%;
-  }
-}
-
-@media (max-width: 768px) {
-  .menu {
     width: 65%;
+  }
+  .potrfolio .portfolio-btn {
+    border-radius: 50%;
+  }
+  .potrfolio .portfolio-btn a {
+    padding: 40px 40px;
   }
 }
