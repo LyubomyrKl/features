@@ -459,12 +459,73 @@ body.lock {
   opacity: 1;
 }
 
-.section_one {
-  background-color: #FDA7DF;
+.section_one #moonText {
+  position: relative;
+  font-size: 96px;
+  top: -100px;
+  opacity: .7;
+  z-index: 1;
+}
+
+.section_one #mountain {
+  z-index: 3;
+}
+
+.section_one #road {
+  z-index: 3;
+}
+
+.section_one:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  bottom: 0;
+  background: -webkit-gradient(linear, left bottom, left top, from(#1a374d), to(transparent));
+  background: linear-gradient(to top, #1a374d, transparent);
+  z-index: 10;
+}
+
+.section_one::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #1a374d;
+  mix-blend-mode: color;
+  z-index: 10;
+}
+
+.section_one .scene {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.section_one .scene img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  pointer-events: none;
 }
 
 #section_two {
-  background-color: #D980FA;
+  background-color: #1a374d;
 }
 
 #section_two .descr__inner {

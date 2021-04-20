@@ -24,7 +24,35 @@ overlay.addEventListener('click', ()=>{
     menu.classList.toggle('menu__active');  
     content.classList.toggle('content__active');
     body.classList.toggle('lock');
+
 });
+
+//section one
+//section one
+//section one
+
+
+const bgPar = document.querySelector('#bg-par'),
+    moon = document.querySelector('#moon'),
+    mountain = document.querySelector('#mountain'),
+    road = document.querySelector('#road'),
+    moonText = document.querySelector('#moonText');
+
+
+
+window.addEventListener('scroll', ()=>{
+
+    let valueScroll = window.scrollY;
+    bgPar.style.top = -valueScroll * 0.3 + 'px';
+    moon.style.left = -valueScroll * 0.5 + 'px';
+    mountain.style.top = - valueScroll * 0.15 + 'px';
+    // road.style.top = valueScroll * 0.15 + 'px';
+    
+
+});
+
+
+
 
 // section two
 // section two
@@ -68,6 +96,9 @@ cardsToMove.forEach(function(element){
 
 
 // section four 
+// section four 
+// section four 
+
 
 
 const circle = document.querySelector('.progress-ring__circle'),
