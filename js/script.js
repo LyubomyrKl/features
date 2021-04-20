@@ -45,7 +45,7 @@ window.addEventListener('scroll', ()=>{
     let valueScroll = window.scrollY;
     bgPar.style.top = -valueScroll * 0.3 + 'px';
     moon.style.left = -valueScroll * 0.5 + 'px';
-    mountain.style.top = - valueScroll * 0.15 + 'px';
+    mountain.style.top = - valueScroll * 0.5 + 'px';
     // road.style.top = valueScroll * 0.15 + 'px';
     
 
