@@ -140,6 +140,61 @@ numberOfPercent.addEventListener('click', function(){
 
 });
 
+// TIMER TIMER TIMER
+// TIMER TIMER TIMER
+// TIMER TIMER TIMER
+
+
+const deadline = '2021-04-26';
+
+function getTime(endtime){
+    const t = Date.parse(endtime) - Date.parse(new Date()),
+    days = Math.floor(t / 1000/60/60/24),
+    hours = Math.floor(t / 1000 / 60 / 60 % 24),
+    minutes = Math.floor(t / 1000 / 60 % 60),
+    seconds =  Math.floor(t / 1000 % 60);
+
+    return{
+        total : t,
+        days : days,
+        hours : hours,
+        minutes : minutes,
+        seconds : seconds
+    };
+
+}
+
+function getZero(num){
+    if(num >= 0 && num < 10){
+        return `0${num}`;
+    }else{
+        return num;
+    }
+}
+
+function setClock(selector, endtime){
+    const timer = document.querySelector(selector),
+    days = timer.querySelector('#days'),
+    hours = timer.querySelector('#hours'),
+    minutes = timer.querySelector('#minutes'),
+    seconds = timer.querySelector('#seconds'),
+    timerInterval = setInterval(upDateClock, 1000);
+
+    upDateClock();
+
+    function upDateClock(){
+        const t = getTime(endtime);
+        days.textContent = getZero(t.days);
+        hours.textContent = getZero(t.hours);
+        minutes.textContent = getZero(t.minutes);
+        seconds.textContent = getZero(t.seconds);
+        if(t.total <= 0){
+            clearInterval (timerInterval);
+        }
+    }
+}
+
+setClock('.timer', deadline);
 
 
 // last_one last_one last_one
