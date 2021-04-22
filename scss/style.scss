@@ -589,9 +589,10 @@ body.lock{
 .timer{
   background-color: rgb(30, 68, 10);
   &__inner{
-    width: 100%;
+    max-width: 100%;
     margin: auto 0;
     display: flex ;
+    align-items: center;
     justify-content: center;
   }
   &__block{
@@ -601,7 +602,7 @@ body.lock{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 0 20px;
+    margin: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     background-color: rgb(24, 58, 7);
     span{
@@ -620,8 +621,9 @@ body.lock{
       max-width: 1050px;  
     }
     
+  } 
 }
-  
+
 
 @media(max-width: 1024px){
     .menu{  
@@ -682,6 +684,12 @@ body.lock{
   }
   
   
+  .timer__inner{
+    max-width: 560px;
+    min-width: 380px;
+    flex-wrap: wrap;
+  }
+
   .potrfolio{
     .portfolio-btn{
       border-radius: 50%;
@@ -693,6 +701,5 @@ body.lock{
     }
      
   }
-
-}
-}
+  
+};

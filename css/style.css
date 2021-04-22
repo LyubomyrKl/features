@@ -772,11 +772,14 @@ body.lock {
 }
 
 .timer__inner {
-  width: 100%;
+  max-width: 100%;
   margin: auto 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -798,7 +801,7 @@ body.lock {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0 20px;
+  margin: 20px;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   background-color: #183a07;
@@ -826,7 +829,7 @@ body.lock {
   }
 }
 
-@media (max-width: 1350px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
   .menu {
     width: 35%;
     height: 100%;
@@ -873,9 +876,15 @@ body.lock {
   }
 }
 
-@media (max-width: 1350px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .menu {
     width: 65%;
+  }
+  .timer__inner {
+    max-width: 560px;
+    min-width: 380px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .potrfolio .portfolio-btn {
     border-radius: 50%;
