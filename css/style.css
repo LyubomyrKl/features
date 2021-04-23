@@ -464,7 +464,7 @@ body.lock {
   position: absolute;
   font-size: 96px;
   top: 100px;
-  opacity: .7;
+  mix-blend-mode: overlay;
   z-index: 1;
 }
 
@@ -564,7 +564,18 @@ body.lock {
 }
 
 #section_three {
-  background-color: #9980FA;
+  background-color: #6496BF;
+}
+
+#section_three::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 450px;
+  top: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#1a374d), to(#6496BF));
+  background: linear-gradient(#1a374d, #6496BF);
 }
 
 #section_three .box {
@@ -600,7 +611,7 @@ body.lock {
   width: 750px;
   height: 450px;
   margin: 10px;
-  background-color: #fab1a0;
+  background-color: #6a89cc;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   -webkit-transition: 1s all linear;
@@ -612,7 +623,18 @@ body.lock {
 }
 
 .section_four {
-  background-color: #c97b3c;
+  background-color: #60a3bc;
+}
+
+.section_four::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  top: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#6496BF), to(#60a3bc));
+  background: linear-gradient(#6496BF, #60a3bc);
 }
 
 .section_four .container_bar {
@@ -659,11 +681,78 @@ body.lock {
   position: relative;
 }
 
+.timer {
+  background-color: #38ada9;
+}
+
+.timer::before {
+  border: 0;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  top: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#60a3bc), to(transparent));
+  background: linear-gradient(to bottom, #60a3bc, transparent 100%);
+}
+
+.timer__inner {
+  max-width: 100%;
+  margin: auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.timer__block {
+  min-width: 150px;
+  font-size: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 20px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: #079992;
+}
+
+.timer__block span {
+  font-size: 76px;
+}
+
 .potrfolio {
-  z-index: 2;
   background: #12CBC4;
+  z-index: 2;
   -webkit-perspective: 1000px;
           perspective: 1000px;
+}
+
+.potrfolio::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  top: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#38ada9), to(#12CBC4));
+  background: linear-gradient(#38ada9, #12CBC4);
 }
 
 .potrfolio .box {
@@ -765,50 +854,6 @@ body.lock {
 
 .potrfolio .portfolio-btn:hover {
   background-color: #227b7e;
-}
-
-.timer {
-  background-color: #1e440a;
-}
-
-.timer__inner {
-  max-width: 100%;
-  margin: auto 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.timer__block {
-  min-width: 150px;
-  font-size: 36px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 20px;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  background-color: #183a07;
-}
-
-.timer__block span {
-  font-size: 76px;
 }
 
 @media (max-width: 1350px) {
