@@ -145,7 +145,7 @@ numberOfPercent.addEventListener('click', function(){
 // TIMER TIMER TIMER
 
 
-const deadline = '2021-04-26';
+const deadline = '2022-01-01';
 
 function getTime(endtime){
     const t = Date.parse(endtime) - Date.parse(new Date()),
