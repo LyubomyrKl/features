@@ -11,8 +11,8 @@
         particleRadius      : 3,
         particleCount       : 100,
         particleMaxVelocity : 0.5,
-        lineLength          : 270,
-        particleLife        : 6,
+        lineLength          : 250,
+        particleLife        : 30,
     };
 
     document.querySelector('body').appendChild(canvas);
