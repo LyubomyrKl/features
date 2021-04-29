@@ -1,6 +1,6 @@
 *,
 *::before,
-*::after {box-sizing: border-box;margin: 0;padding: 0;border:0;}
+*::after {box-sizing: border-box;margin: 0;padding: 0;border:0; scroll-behavior: smooth;}
 body {font-size: 16px; font-family: 'Exo 2', sans-serif; color: white   ;min-height: 100vh;scroll-behavior: smooth;text-rendering: optimizeSpeed;line-height: 1.5;}
 ul[class],ol[class] {list-style: none;}
 img {max-width: 100%;display: block;}
@@ -33,6 +33,51 @@ body.lock{
     transition: .5s;
     transform:translateX(-100%);
     z-index: 1000;
+
+
+
+
+    .figure{
+      position: fixed;
+      top: 92%;
+      right: -15%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      
+      a{
+        color: rgba(0, 0, 0, .6);
+        font-size: 46px;
+        transition: 0.2 linear;
+      }
+
+      &-links{
+        position: absolute;
+        display: flex; 
+        top: -30%;
+        left: 25%;
+
+        a{
+          // position: absolute;
+          margin: 0 40px;
+        }
+
+      }
+
+
+      
+      
+    }
+
+
+
+
+
+
+
+
+
     &__active{
         transform: translateX(0%);
     }

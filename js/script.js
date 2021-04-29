@@ -10,9 +10,44 @@ window.addEventListener('scroll', (e)=>{
    let windowHeight = document.documentElement.scrollHeight -document.documentElement.clientHeight;
    let per = windowScroll / windowHeight * 100;
    progressBar.style.width = `${per}%`;
+
+   showArrow();
 });
 
 
+//ARROW UP
+//ARROW UP
+//ARROW UP
+
+const arrowUp = document.querySelector('.figure'),
+arrowBtn = arrowUp.querySelectorAll('a');
+
+arrowUp.addEventListener('click', ()=>{
+    // if(e.currentTarget == arrowUp){
+    //     arrowBtn.forEach((e)=>{
+    //       e.classList.toggle('active');
+    //     });
+        
+    // }
+    document.documentElement.scrollTop = 0;
+});
+
+
+
+function showArrow(){
+    if(document.documentElement.scrollTop > 700){
+        arrowUp.style.display = 'flex';
+    }else{
+        arrowUp.style.display = 'none';
+    }
+
+}
+
+
+
+//BURGER BURGER BURGER
+//BURGER BURGER BURGER
+//BURGER BURGER BURGER
 
 function burger(){
     menu.classList.toggle('menu__active');  
@@ -44,9 +79,10 @@ window.addEventListener('scroll', ()=>{
 
     let valueScroll = window.scrollY;
     bgPar.style.top = -valueScroll * 0.3 + 'px';
+    bgPar.style.left = -valueScroll * 0.02 + 'px';
     moon.style.left = -valueScroll * 0.5 + 'px';
     mountain.style.top = - valueScroll * 0.5 + 'px';
-    // road.style.top = valueScroll * 0.15 + 'px';
+    road.style.top = -valueScroll * 0.15 + 'px';
     
 
 });
