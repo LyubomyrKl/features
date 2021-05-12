@@ -863,6 +863,7 @@ body.lock {
 
 .potrfolio .card img {
   width: 100%;
+  min-height: 100%;
 }
 
 .potrfolio .card:hover {

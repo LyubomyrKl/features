@@ -27,7 +27,7 @@ arrowUp.addEventListener('click', ()=>{
     //     arrowBtn.forEach((e)=>{
     //       e.classList.toggle('active');
     //     });
-        
+    //
     // }
     document.documentElement.scrollTop = 0;
 });
@@ -83,7 +83,6 @@ window.addEventListener('scroll', ()=>{
     moon.style.left = -valueScroll * 0.5 + 'px';
     mountain.style.top = - valueScroll * 0.5 + 'px';
     road.style.top = -valueScroll * 0.15 + 'px';
-    
 
 });
 
