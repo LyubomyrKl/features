@@ -1,6 +1,6 @@
 const menu = document.getElementById('menu'),
       content = document.getElementById('content'),
-      section = content.querySelectorAll('section'),
+      sections = content.querySelectorAll('section'),
       overlay = document.querySelector('.overlay'),
       progressBar = document.querySelector('.progress'),
       body = document.querySelector('body');
@@ -11,7 +11,7 @@ window.addEventListener('scroll', (e)=>{
    let per = windowScroll / windowHeight * 100;
    progressBar.style.width = `${per}%`;
 
-   showArrow();
+   
 });
 
 
@@ -19,31 +19,64 @@ window.addEventListener('scroll', (e)=>{
 //ARROW UP
 //ARROW UP
 
-const arrowUp = document.querySelector('.figure'),
-arrowBtn = arrowUp.querySelectorAll('a');
-
-arrowUp.addEventListener('click', ()=>{
-    // if(e.currentTarget == arrowUp){
-    //     arrowBtn.forEach((e)=>{
-    //       e.classList.toggle('active');
-    //     });
-    //
-    // }
-    document.documentElement.scrollTop = 0;
-});
 
 
+const contentInner = document.querySelector('.content__inner'),
+      width = window.getComputedStyle(contentInner).width,
+      left = document.querySelector('#arrow_left'),
+      right = document.querySelector('#arrow_rigth');
 
-function showArrow(){
-    if(document.documentElement.scrollTop > 700){
-        arrowUp.style.display = 'flex';
-    }else{
-        arrowUp.style.display = 'none';
+      contentInner.style.width = 100 * sections.length + '%';
+      contentInner.style.display = 'flex';
+      contentInner.style.transition = '0.5s all';
+
+      content.style.overflow = 'hidden';
+      sections.forEach(section =>{
+          section.style.width = width;  
+      });
+
+let offset = 0;
+      
+
+document.addEventListener('keydown', (e) => {
+    if (e.code === "ArrowRight" && !menu.classList.contains('menu__active')) {
+        next();
+        
     }
+});
 
+document.addEventListener('keydown', (e) => {
+    if (e.code === "ArrowLeft" && !menu.classList.contains('menu__active')) { 
+        prev();
+    }
+});
+
+left.addEventListener('click', ()=>{
+    if (!menu.classList.contains('menu__active')) { 
+        prev();
+    }
+});
+
+right.addEventListener('click', ()=>{
+    if (!menu.classList.contains('menu__active')) { 
+        next();
+    }
+});
+
+function next(){
+    if(offset !== +width.slice(0, width.length-2) * (sections.length - 1)){
+        offset+= +width.slice(0, width.length-2);
+    }
+    contentInner.style.transform = `translateX(-${offset}px)`;
 }
 
+function prev(){
+    if(offset !== 0){
+        offset-= +width.slice(0, width.length-2);
 
+    }
+    contentInner.style.transform = `translateX(-${offset}px)`;
+}
 
 //BURGER BURGER BURGER
 //BURGER BURGER BURGER
@@ -56,9 +89,9 @@ function burger(){
 }
 
 overlay.addEventListener('click', ()=>{
-    menu.classList.toggle('menu__active');  
-    content.classList.toggle('content__active');
-    body.classList.toggle('lock');
+    menu.classList.remove('menu__active');  
+    content.classList.remove('content__active');
+    body.classList.remove('lock');
 
 });
 
@@ -245,4 +278,5 @@ lastSectionBox.addEventListener('click', (e)=>{
         container.classList.toggle('container_origin');
     }
 });
+
 

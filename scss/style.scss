@@ -1,12 +1,13 @@
-*,
-*::before,
-*::after {box-sizing: border-box;margin: 0;padding: 0;border:0; scroll-behavior: smooth;}
-body {font-size: 16px; font-family: 'Exo 2', sans-serif; color: white   ;min-height: 100vh;scroll-behavior: smooth;text-rendering: optimizeSpeed;line-height: 1.5;}
-ul[class],ol[class] {list-style: none;}
-img {max-width: 100%;display: block;}
+  *,
+  *::before,
+  *::after {box-sizing: border-box;margin: 0;padding: 0;border:0; scroll-behavior: smooth;}
+  body {font-size: 16px; font-family: 'Exo 2', sans-serif; color: white   ;min-height: 100vh;scroll-behavior: smooth;text-rendering: optimizeSpeed;line-height: 1.5;}
+  ul[class],ol[class] {list-style: none;}
+  img {max-width: 100%;display: block;}
 
 body.lock{
   overflow:hidden;
+  
 }
 
 .wrapper{
@@ -302,8 +303,31 @@ body.lock{
 .content{
     font-size: 30px;
     transition: 0.5s;
-    overflow-x: hidden;
-      
+    position: relative;
+    .arrow{
+      color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      bottom:30px;
+      width: 60px;
+      height: 60px; 
+      font-size: 64px; 
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #arrow_left{
+      left: 50px;
+      transform: rotate(-90deg);
+    }
+    #arrow_rigth{
+      right: 50px;
+      transform: rotate(90deg);
+      transform-origin: center;
+    }
+  &__inner{
+    width: 100vw;
+  }
     section{
       position: relative;
       height: 100vh;
@@ -328,6 +352,7 @@ body.lock{
       background: rgba(0, 0, 0, .25);
       opacity: 0;
       transition:  all .5s linear;
+     
       
     }
 
@@ -338,7 +363,7 @@ body.lock{
       .overlay{
         z-index: 5;
         transition:  all .5s linear;
-        
+        transform: scaleX(25%);
         opacity: 1  ;
       }
       
@@ -381,6 +406,7 @@ body.lock{
 
 
 .section_one{
+ 
   #moonText{
   position: absolute;
   font-size: 96px;
@@ -408,9 +434,11 @@ body.lock{
     bottom: 0;
     background: linear-gradient(to top, #1a374d, transparent);
     z-index: 10;
+    overflow-y: hidden;
   }
 
   &::before{
+    overflow-y: hidden;
     content: '';
     position: absolute;
     width: 100%;
@@ -626,12 +654,11 @@ body.lock{
     justify-content: center;
     align-items: flex-end;
     max-width: 1400px;
-    
-   width: 100%;
+    width: 100%;
     transition:  1s all;
     
     transform: rotateX(55deg) rotateY(10deg) rotatez(-40deg);
-
+    
     ::-webkit-scrollbar{
       width: 5px;
     }
@@ -645,8 +672,7 @@ body.lock{
       background: #939393;
       border-radius: 8px;
       border: 1px solid #d4d4d4;
-      
-      
+
     }  
   }
   .container_origin{
@@ -761,11 +787,15 @@ body.lock{
 };  
 
 @media( max-width: 768px) {
+  .arrow{
+    font-size: 36px !important;
+  }
+
+
   .menu{
     width: 65%;
   }
-  
-  
+
   .timer__inner{
     max-width: 560px;
     min-width: 380px;
