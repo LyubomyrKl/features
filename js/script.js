@@ -6,20 +6,84 @@ const menu = document.getElementById('menu'),
       body = document.querySelector('body');
       
 window.addEventListener('scroll', (e)=>{
-   let windowScroll = document.body.scrollTop || document.documentElement.scrollTop;
-   let windowHeight = document.documentElement.scrollHeight -document.documentElement.clientHeight;
+   let windowScroll = document.body.scrollLeft || document.documentElement.scrollLeft;
+   let windowHeight = document.documentElement.scrollWidth - document.documentElement.clientWidth;
    let per = windowScroll / windowHeight * 100;
    progressBar.style.width = `${per}%`;
 
-   
 });
 
 
-//ARROW UP
-//ARROW UP
-//ARROW UP
+const checkbox = document.querySelector('#checkbox');
 
 
+
+checkbox.addEventListener('change', ()=>{
+   if(checkbox.checked === true){
+    localStorage.setItem('bg', 'change');
+    body.classList.add('active');
+   }else{
+    localStorage.removeItem('bg', 'change');
+    body.classList.remove('active');
+   }
+});
+
+
+if(localStorage.getItem('bg')){
+    checkbox.checked = true;
+    body.classList.add('active');
+}else{
+    body.classList.remove('active');
+}
+
+
+//SECTIONS
+//SECTIONS
+//SECTIONS
+
+
+
+
+    class Section{
+        constructor(name, parentSelector, date){
+            this.name = name;
+            this.parent =  document.querySelector(parentSelector);
+            this.data = date;
+        }
+        render(){
+            const element  = document.createElement('a');
+            element.classList.add('nav-link');
+            element.textContent = this.name;
+            element.setAttribute = 
+            this.parent.append(element);
+        }
+    }
+
+    for (let index = 1; index <= sections.length; index++) {
+        new Section(index, '.content-nav').render();
+        
+    }
+
+    const contentNav = document.querySelector('.content-nav'),
+        contentsNumb = document.querySelectorAll('.nav-link');
+        
+    
+    contentsNumb[0].classList.add('active');
+
+
+    contentNav.addEventListener('click', event=>{
+        if(event.target && event.target.classList.contains('nav-link')){
+            contentsNumb.forEach(element =>{
+                element.classList.remove('active');
+                event.target.classList.add('active');
+            });
+            
+        }
+    });
+
+//ARROW 
+//ARROW
+//ARROW 
 
 const contentInner = document.querySelector('.content__inner'),
       width = window.getComputedStyle(contentInner).width,
@@ -78,6 +142,38 @@ function prev(){
     contentInner.style.transform = `translateX(-${offset}px)`;
 }
 
+
+
+let x1, 
+    y1;
+contentInner.addEventListener('touchstart', (e)=>{
+    const touch = e.touches[0];
+    x1 = touch.clientX;
+    y1 = touch.clientY;
+    
+}, false);
+
+contentInner.addEventListener('touchmove', (e)=>{
+    
+        if(!x1 || !y1){
+            return false;
+        }
+        let x2 = e.touches[0].clientX,
+            y2 = e.touches[0].clientY,
+            xDiff = x2-x1,
+            yDiff = y2-y1;
+
+            if(Math.abs(xDiff)>Math.abs(yDiff)){
+                (xDiff>0) ? prev() : next();
+            }
+            x1 = null;
+            y1 = null;
+        
+});
+
+
+
+
 //BURGER BURGER BURGER
 //BURGER BURGER BURGER
 //BURGER BURGER BURGER
@@ -110,7 +206,7 @@ const bgPar = document.querySelector('#bg-par'),
 
 window.addEventListener('scroll', ()=>{
 
-    let valueScroll = window.scrollY;
+    let valueScroll = window.scrollX;
     bgPar.style.top = -valueScroll * 0.3 + 'px';
     bgPar.style.left = -valueScroll * 0.02 + 'px';
     moon.style.left = -valueScroll * 0.5 + 'px';
@@ -270,7 +366,7 @@ setClock('.timer', deadline);
 // last_one last_one last_one
 
 const container = document.querySelector('.container'),
-        lastSection = document.querySelector('#last_one'),
+        lastSection = document.querySelector('.potrfolio'),
         lastSectionBox = lastSection.querySelector('.box');
 
 lastSectionBox.addEventListener('click', (e)=>{
@@ -279,4 +375,12 @@ lastSectionBox.addEventListener('click', (e)=>{
     }
 });
 
+
+// go button
+// go button
+// go button
+
+const portfolioBtn = document.querySelector('.portfolio-btn'),
+      contentWidht = document.clientWidth;
+     
 
