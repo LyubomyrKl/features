@@ -42,7 +42,8 @@ if(localStorage.getItem('bg')){
 //SECTIONS
 
 
-
+let offset = 0,
+slideIndex = 0;
 
     class Section{
         constructor(name, parentSelector, date){
@@ -54,32 +55,44 @@ if(localStorage.getItem('bg')){
             const element  = document.createElement('a');
             element.classList.add('nav-link');
             element.textContent = this.name;
-            element.setAttribute = 
+            element.setAttribute ('data-slide-to', this.data);
             this.parent.append(element);
         }
     }
 
     for (let index = 1; index <= sections.length; index++) {
-        new Section(index, '.content-nav').render();
+        new Section(index, '.content-nav', index).render();
         
     }
 
     const contentNav = document.querySelector('.content-nav'),
-        contentsNumb = document.querySelectorAll('.nav-link');
+          contentsNumb = document.querySelectorAll('.nav-link'),
+          dataSlideTo = [];
         
-    
     contentsNumb[0].classList.add('active');
-
 
     contentNav.addEventListener('click', event=>{
         if(event.target && event.target.classList.contains('nav-link')){
-            contentsNumb.forEach(element =>{
+            contentsNumb.forEach((element) =>{
                 element.classList.remove('active');
                 event.target.classList.add('active');
-            });
-            
-        }
+                slideIndex = event.target.getAttribute('data-slide-to')-1;
+            });   
+        }  
     });
+
+    contentsNumb.forEach(element=>{
+        element.addEventListener('click', event=>{
+             const dataSlideTo = element.getAttribute('data-slide-to');
+             slideIndex = dataSlideTo;
+             offset = +width.slice(0, width.length-2) * (slideIndex - 1);
+             contentInner.style.transform = `translateX(-${offset}px)`;
+
+        }); 
+    });
+   
+
+    
 
 //ARROW 
 //ARROW
@@ -99,8 +112,7 @@ const contentInner = document.querySelector('.content__inner'),
           section.style.width = width;  
       });
 
-let offset = 0;
-      
+
 
 document.addEventListener('keydown', (e) => {
     if (e.code === "ArrowRight" && !menu.classList.contains('menu__active')) {
@@ -132,15 +144,31 @@ function next(){
         offset+= +width.slice(0, width.length-2);
     }
     contentInner.style.transform = `translateX(-${offset}px)`;
+    
+   if(slideIndex<5){
+    contentsNumb.forEach(e=>{
+        e.classList.remove('active');
+    });
+    slideIndex++;
+    contentsNumb[slideIndex].classList.add('active');
+   }
 }
 
 function prev(){
     if(offset !== 0){
         offset-= +width.slice(0, width.length-2);
-
     }
     contentInner.style.transform = `translateX(-${offset}px)`;
+    
+   if(slideIndex>0){
+       contentsNumb.forEach(e=>{
+            e.classList.remove('active');
+       });
+       slideIndex--;
+       contentsNumb[slideIndex].classList.add('active');
+   }
 }
+
 
 
 
@@ -204,15 +232,19 @@ const bgPar = document.querySelector('#bg-par'),
 
 
 
-window.addEventListener('scroll', ()=>{
+document.addEventListener('mousemove', (event)=>{
+    let valueScrollY = event.clientY,
+    valueScrollX = event.clientX-960;
 
-    let valueScroll = window.scrollX;
-    bgPar.style.top = -valueScroll * 0.3 + 'px';
-    bgPar.style.left = -valueScroll * 0.02 + 'px';
-    moon.style.left = -valueScroll * 0.5 + 'px';
-    mountain.style.top = - valueScroll * 0.5 + 'px';
-    road.style.top = -valueScroll * 0.15 + 'px';
+    bgPar.style.top = valueScrollY / 100 + 'px';
+    moon.style.top = valueScrollY * 30 / 1000+ 'px';
+    mountain.style.top =  -valueScrollY * 200 / 1000 + 'px';
+    road.style.top = valueScrollY * 100 / 1000 + 'px';  
 
+    bgPar.style.left = valueScrollX / 100 + 'px';
+    moon.style.left = valueScrollX * 100/ 1000+ 'px';
+  
+    
 });
 
 
@@ -309,7 +341,7 @@ numberOfPercent.addEventListener('click', function(){
 // TIMER TIMER TIMER
 
 
-const deadline = '2022-01-01';
+const deadline = '2021-12-05';
 
 function getTime(endtime){
     const t = Date.parse(endtime) - Date.parse(new Date()),

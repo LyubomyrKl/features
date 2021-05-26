@@ -531,6 +531,8 @@ body.lock {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
 }
 
 .content section img {
@@ -557,7 +559,7 @@ body.lock {
 }
 
 .content__active .overlay {
-  z-index: 5;
+  z-index: 15;
   -webkit-transition: all .5s linear;
   transition: all .5s linear;
   -webkit-transform: scaleX(25%);
@@ -647,6 +649,8 @@ body.lock {
   background: #1a374d;
   mix-blend-mode: color;
   z-index: 10;
+  -webkit-transition: .5s linear;
+  transition: .5s linear;
 }
 
 .section_one .scene {
@@ -959,6 +963,10 @@ body.lock {
   background-color: #002829;
 }
 
+body.active .section_one::before {
+  background: #fff;
+}
+
 body.active .section_two {
   background-color: #383838;
 }
@@ -992,7 +1000,7 @@ body.active .potrfolio .portfolio-btn {
 }
 
 @media (max-width: 1350px) {
-  #last_one {
+  .potrfolio {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1004,8 +1012,9 @@ body.active .potrfolio .portfolio-btn {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  #last_one .box {
+  .potrfolio .box {
     max-width: 1050px;
+    margin-bottom: 200px;
   }
 }
 
@@ -1021,7 +1030,7 @@ body.active .potrfolio .portfolio-btn {
   #moon {
     display: none;
   }
-  #last_one {
+  .potrfolio {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1029,12 +1038,12 @@ body.active .potrfolio .portfolio-btn {
         -ms-flex-align: center;
             align-items: center;
   }
-  #last_one .box {
+  .potrfolio .box {
     width: 100%;
     overflow-x: scroll;
     height: 675px;
   }
-  #last_one .box .container {
+  .potrfolio .box .container {
     margin-left: 15px;
     display: block;
     max-width: 500px;
@@ -1043,14 +1052,14 @@ body.active .potrfolio .portfolio-btn {
             transform: rotate(0);
     white-space: nowrap;
   }
-  #last_one .box .card {
+  .potrfolio .box .card {
     width: 90%;
     height: 100%;
     -webkit-transform: translateZ(-10px);
             transform: translateZ(-10px);
     display: inline-block;
   }
-  #last_one .slider_btn {
+  .potrfolio .slider_btn {
     position: absolute;
     bottom: 10px;
   }

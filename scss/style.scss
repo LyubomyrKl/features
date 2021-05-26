@@ -397,7 +397,8 @@ body.lock{
       display: flex;
       justify-content: center;
       align-content: center;
-    
+      transition: 0.5s all;
+     
       img{
         display: block;
         width: 100%;
@@ -424,7 +425,7 @@ body.lock{
         transform: translateX(15%);
       
       .overlay{
-        z-index: 5;
+        z-index: 15;
         transition:  all .5s linear;
         transform: scaleX(25%);
         opacity: 1  ;
@@ -484,6 +485,7 @@ body.lock{
 
   #mountain{
     z-index: 3;
+    // top: 100%;
   }
   #road{
     z-index: 3;
@@ -502,6 +504,8 @@ body.lock{
     background: #1a374d;
     mix-blend-mode: color;
     z-index: 10;
+
+    transition: .5s linear;
   }
 
   .scene{
@@ -740,6 +744,10 @@ body.lock{
 };
 
 body.active{
+  .section_one::before{
+    background: #fff;
+  }
+
   .section_two{
     background-color: #383838;
   }
@@ -772,12 +780,13 @@ body.active{
 }
 
 @media( max-width: 1350px) {
-  #last_one{
+  .potrfolio{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     .box{
-      max-width: 1050px;  
+      max-width: 1050px;
+      margin-bottom: 200px;  
     }
     
   } 
@@ -798,7 +807,7 @@ body.active{
     }
 
 
-    #last_one{
+    .potrfolio{
       display: flex;
       align-items: center;
 
