@@ -670,7 +670,7 @@ body.lock{
   z-index: 2;
   perspective: 1000px;
   
-  .container{
+  .container_origin{
     
     transform-style: preserve-3d;
     display: flex;
@@ -699,7 +699,7 @@ body.lock{
 
     }  
   }
-  .container_origin{
+  .container{
     transform: rotate(0);
   }
 
@@ -818,7 +818,7 @@ body.active{
         overflow-x: scroll;
         height: 675px;   
         
-       .container{
+       .container_origin{
          margin-left: 15px;
          display: block;
          max-width: 500px;

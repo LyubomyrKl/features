@@ -397,13 +397,13 @@ setClock('.timer', deadline);
 // last_one last_one last_one
 // last_one last_one last_one
 
-const container = document.querySelector('.container'),
+const container = document.querySelector('.container_origin'),
         lastSection = document.querySelector('.potrfolio'),
         lastSectionBox = lastSection.querySelector('.box');
 
 lastSectionBox.addEventListener('click', (e)=>{
     if(e.target && e.target.classList.contains('box')){
-        container.classList.toggle('container_origin');
+        container.classList.toggle('container');
     }
 });
 

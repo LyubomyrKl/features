@@ -878,7 +878,7 @@ body.lock {
           align-items: center;
 }
 
-.potrfolio .container {
+.potrfolio .container_origin {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   display: -webkit-box;
@@ -900,23 +900,23 @@ body.lock {
           transform: rotateX(55deg) rotateY(10deg) rotatez(-40deg);
 }
 
-.potrfolio .container ::-webkit-scrollbar {
+.potrfolio .container_origin ::-webkit-scrollbar {
   width: 5px;
 }
 
-.potrfolio .container ::-webkit-scrollbar-track {
+.potrfolio .container_origin ::-webkit-scrollbar-track {
   background: #d4d4d4;
   -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset;
           box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset;
 }
 
-.potrfolio .container ::-webkit-scrollbar-thumb {
+.potrfolio .container_origin ::-webkit-scrollbar-thumb {
   background: #939393;
   border-radius: 8px;
   border: 1px solid #d4d4d4;
 }
 
-.potrfolio .container_origin {
+.potrfolio .container {
   -webkit-transform: rotate(0);
           transform: rotate(0);
 }
@@ -1043,7 +1043,7 @@ body.active .potrfolio .portfolio-btn {
     overflow-x: scroll;
     height: 675px;
   }
-  .potrfolio .box .container {
+  .potrfolio .box .container_origin {
     margin-left: 15px;
     display: block;
     max-width: 500px;
