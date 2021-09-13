@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+          integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>LyubomyrKl</title>
+</head>
+
+<body class="">
+<div class="wrapper">
+    <div class="progress"></div>
+    <div id='menu' class="menu">
+
+        <button id='burger__icon' onClick="burger()">
+            <div class="burger"></div>
+            <div class="burger"></div>
+            <div class="burger"></div>
+        </button>
+
+        <div class="menu__inner">
+            <div class="logo"><img src="img/photo_2020-07-12_12-20-11.jpg" alt=""></div>
+            <nav class="menu__list">
+                <li class="menu__list_link"><a href="#section_two">Hub</a></li>
+                <li class="menu__list_link"><a href="https://johngalt-f901e.web.app/">Training</a></li>
+                <li class="menu__list_link"><a href="ParticlesCanvas.html">Particles Canvas</a></li>
+                <li class="menu__list_link"><a href="black.html">Black</a></li>
+            
+            </nav>
+        </div>
+
+        <div class="check_box">
+            <input type="checkbox" id='checkbox' name="checkbox">
+        </div>
+
+    </div>
+
+    <div id="content" class="content">
+        <div class="overlay"></div>
+       <div class="content__inner">
+        <section class="section_one" >
+            <div class="scene">
+                <img id='bg-par' src="img/bg.jpg" alt="">
+                <img id='moon' src="img/moon.png" alt="">
+                <img id='mountain' src="img/mountain.png" alt="">
+                <img id='road' src="img/road.png" alt="">
+                <p id="moonText">Moon Light</p>
+            </div>
+
+        </section>
+
+        <section class="section_two">
+            <div class="descr descr_card">
+                <div class="descr__inner descr__inner_front">
+                    <h2>Front</h1>
+                        <p>This card will reverse if you click on it</p>
+                </div>
+                <div class="descr__inner descr__inner_back ">
+                    <h2>Back</h1>
+                        <p>This card will reverse if you click on it</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section_three">
+            <div class="box">
+
+                <div class="card">
+                    <h3>Card 2</h3>
+                    <p>This card can move</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section_four">
+            <div class="container_bar">
+                <h2>click on me</h2>
+                <div class="number">0%</div>
+                <svg class="progress-ring">
+                    <circle class="progress-ring__circle" stroke = 'white'
+                            stroke-width='4' cx='180' cy='180' r='172' fill='transparent'/>
+                </svg>
+            </div>
+        </section>
+
+        <section class="timer">
+            <div class="timer__inner">
+
+                <div class="timer__block">
+                    <span id="days">12</span>
+                    days
+                </div>
+                <div class="timer__block">
+                    <span id="hours">20</span>
+                    hours
+                </div>
+                <div class="timer__block">
+                    <span id="minutes">56</span>
+                    minutes
+                </div>
+                <div class="timer__block">
+                    <span id="seconds">20</span>
+                    second
+                </div>
+            </div>
+        </section>
+
+        <section class="potrfolio">
+            <div class="box">
+                <div id="ds" class="container_origin">
+                    <div class="card"><a href="https://foodlb.herokuapp.com/"><img 
+                            src="img/screencapture-foodlb-herokuapp-2021-05-17-21_08_24.png" alt=""></a>
+                    </div>
+                    <div class="card"><a href="https://appki-lb.herokuapp.com/" target="_blank"><img
+                            src="img/screencapture-appki-lb-herokuapp-2021-04-17-19_49_33.png" alt=""></a>
+                    </div>
+                    <div class="card"><a href="https://surfingfree.herokuapp.com/" target="_blank"><img
+                            src="img/screencapture-surfingfree-herokuapp-2021-04-28-21_23_50.png" alt=""></a>
+                    </div>
+                    <div class="card"><a href="https://agencylb.herokuapp.com/" target="_blank"><img
+                            src="img/screencapture-127-0-0-1-5500-home-html-2021-05-10-01_31_06.png" alt=""></a>
+                    </div>
+                    <div class="card"><a href="https://sashamartens.herokuapp.com/" target="_blank"><img
+                            src="img/screencapture-sashamartens-herokuapp-2021-05-12-18_17_05.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <button class="portfolio-btn"><a href="https://johngalt-f901e.web.app/workout-log">Go</a></button>
+
+        </section>
+       </div>
+       <div class="arrow" id="arrow_left"> <a class="fas fa-arrow-circle-up"></a></div>
+            <nav class="content-nav"></nav>
+       <div class="arrow" id="arrow_rigth"> <a class="fas fa-arrow-circle-up"></a></div>
+    </div>
+
+    
+</div>
+<script src="js/script.js"></script>
+</body>
+
+</html>
