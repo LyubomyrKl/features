@@ -132,6 +132,7 @@ body.lock {
 }
 
 .menu .figure-links {
+  text-transform: uppercase;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -560,10 +561,9 @@ body.lock {
 
 .content__active .overlay {
   z-index: 15;
+  width: 100%;
   -webkit-transition: all .5s linear;
   transition: all .5s linear;
-  -webkit-transform: scaleX(25%);
-          transform: scaleX(25%);
   opacity: 1;
 }
 
@@ -884,8 +884,6 @@ body.lock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -893,7 +891,7 @@ body.lock {
       -ms-flex-align: end;
           align-items: flex-end;
   max-width: 1400px;
-  width: 100%;
+  width: 80%;
   -webkit-transition: 1s all;
   transition: 1s all;
   -webkit-transform: rotateX(55deg) rotateY(10deg) rotatez(-40deg);
@@ -941,28 +939,6 @@ body.lock {
           transform: translateZ(10px);
 }
 
-.potrfolio .portfolio-btn {
-  position: absolute;
-  bottom: 30px;
-  border-radius: 10px;
-  background-color: #298d90;
-  -webkit-transition: .1s linear;
-  transition: .1s linear;
-  margin-bottom: 80px;
-}
-
-.potrfolio .portfolio-btn a {
-  display: block;
-  text-decoration: none;
-  padding: 30px 150px;
-  color: white;
-  font-size: 25px;
-}
-
-.potrfolio .portfolio-btn:hover {
-  background-color: #002829;
-}
-
 body.active .section_one::before {
   background: #fff;
 }
@@ -988,14 +964,6 @@ body.active .timer {
 }
 
 body.active .timer__block {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-body.active .potrfolio {
-  background-color: #606060;
-}
-
-body.active .potrfolio .portfolio-btn {
   background-color: rgba(0, 0, 0, 0.5);
 }
 

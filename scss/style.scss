@@ -91,6 +91,7 @@ body.lock{
       }
 
       &-links{
+        text-transform: uppercase;  
         position: absolute;
         display: flex; 
         top: -30%;
@@ -426,9 +427,10 @@ body.lock{
       
       .overlay{
         z-index: 15;
+        width: 100%;
         transition:  all .5s linear;
-        transform: scaleX(25%);
-        opacity: 1  ;
+        // transform: scaleX(25%);
+        opacity: 1 ;
       }
       
     }
@@ -674,13 +676,12 @@ body.lock{
     
     transform-style: preserve-3d;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: flex-end;
     max-width: 1400px;
-    width: 100%;
+    width: 80%;
     transition:  1s all;
-    
+  
     transform: rotateX(55deg) rotateY(10deg) rotatez(-40deg);
     
     ::-webkit-scrollbar{
@@ -720,26 +721,7 @@ body.lock{
     }
   }
 
-.portfolio-btn{
-  position: absolute;
-  bottom: 30px;
-  border-radius: 10px;
-  background-color: #298d90;
-  transition: .1s linear;
-  margin-bottom: 80px;
-  a{
-    display: block;
-    text-decoration: none;  
-    padding: 30px 150px;
-    color: white; 
-    font-size: 25px;
-    
-    
-  }
-  &:hover{
-    background-color: #002829;
-  }
-}
+
 
 };
 
@@ -770,13 +752,7 @@ body.active{
     }
   }
 
-  .potrfolio{
-    
-    background-color: 	#606060;
-    .portfolio-btn{
-      background-color: rgba(0,0,0,0.5 );
-    }
-  }
+  
 }
 
 @media( max-width: 1350px) {
